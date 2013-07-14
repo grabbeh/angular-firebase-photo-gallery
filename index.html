@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app='galleryModule'>
+<head>
+<meta charset="utf-8"/>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+	<link rel="stylesheet" href="base.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quicksand">
+	
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="controllers.js"></script>
+	<script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script type="text/javascript" src="angularFire.js"></script>
+<title>Angular + Firebase + images</title>
+</head>
+<body>
+<div class="main-container">
+	<div class="menu-items">
+		<div class="pure-menu pure-menu-open pure-menu-horizontal">
+			<ul>
+				<li><a href="#/"><b>Portfolio</b></a></li>
+				<li><a href="#/about"><b>About</b></a></li>
+				<li><a href="#/contactme"><b>Contact me</b></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="title">
+		<a ng-href="/">Katie Mihailovits </a>
+	</div>
+	<div class="text-content">
+		<b>Download a pdf of my portfolio </b><a class="underline" ng-href="sample.pdf"><b>here</b></a>
+	</div>
+	<ul class="thumbnails" ng-controller="thumbnailController">
+		<li ng-repeat="image in images" class="content">
+		<a ng-href='#/view/{{image.id}}'><img ng-src={{image.thumburl}}/></a>
+		</li>
+	</ul>
+	<div ng-view>
+	</div>
+</div>
+</body>
+</html>
