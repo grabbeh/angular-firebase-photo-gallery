@@ -1,1 +1,1 @@
-A very simple project using Angular's ng-view to swap in a new image, with the id of each photo bound to the url and accessed with $routeParams. Firebase is used to store the urls for the images. 
+A *very* simple project using Angular's ng-view to swap in a new image whilst not reloading the whole page, with the id of each photo bound to the url and accessed with $routeParams. Firebase is used to store the urls for the images. 
